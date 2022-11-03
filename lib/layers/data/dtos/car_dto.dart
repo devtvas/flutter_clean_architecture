@@ -12,8 +12,8 @@ class CarDto extends CarEntity {
     required this.valor,
   }) : super(valor: valor, qtdPortas: qtdPortas, placa: placa);
 
-  fromMap(Map map) {
-    CarDto(
+  factory CarDto.fromMap(Map<String, dynamic> map) {
+    return CarDto(
       placa: map['placa'],
       qtdPortas: map['qtdPortas'],
       valor: map['valor'],
