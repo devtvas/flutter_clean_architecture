@@ -1,21 +1,23 @@
 import 'package:clean_architecture/layers/data/datasources/i_get_car_by_color_datasource.dart';
 import 'package:clean_architecture/layers/data/dtos/car_dto.dart';
 
-class GetCarByColorLocalDatasource implements IGetCarByColorDatasource {
+class GetCarByColorLocalDatasourceImpl implements IGetCarByColorDatasource {
   final jsonRed = {
     "placa": 'ABC123',
-    "qtdPortas": 2,
-    "valorFinal": 1000.00,
+    "qtdPortas": 4,
+    "valor": 5000.00,
   };
   final jsonAny = {
-    "placa": 'ABC123',
+    "placa": 'QWE',
     "qtdPortas": 2,
-    "valorFinal": 1000.00,
+    "valor": 2000.00,
   };
 
   @override
   CarDto call(String color) {
-    // TODO: implement call
-    throw UnimplementedError();
+    if (color.contains('red')) {
+      return CarDto.fromMap(jsonRed);
+    }
+    return CarDto.fromMap(jsonAny);
   }
 }

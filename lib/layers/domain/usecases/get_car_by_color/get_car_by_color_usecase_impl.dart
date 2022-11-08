@@ -1,10 +1,10 @@
-import 'package:clean_architecture/layers/data/repositories/save_car_favourite_repository_impl.dart';
 import 'package:clean_architecture/layers/domain/entities/car_entity.dart';
+import 'package:clean_architecture/layers/domain/repositories/i_get_car_by_color_repository.dart';
 import 'package:clean_architecture/layers/domain/repositories/i_save_car_favourite_repository.dart';
 import 'package:clean_architecture/layers/domain/usecases/get_car_by_color/i_get_car_by_color_usecase.dart';
 
 class GetCarByColorUsecaseImpl implements IGetCarByColorUsecase {
-  final ISaveCarFavouriteRepository repository;
+  final IGetCarByColorRepository repository;
   GetCarByColorUsecaseImpl(this.repository);
   @override
   CarEntity call(String color) {

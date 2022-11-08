@@ -28,6 +28,6 @@ main() {
         CarEntity(placa: "ABC123", qtdPortas: 2, valor: 15000.00);
     double resultadoEsperado = 30000.00;
     carEntity.changeValueOfCar();
-    expect(carEntity.valor, resultadoEsperado);
+    expect(carEntity.valorReal, resultadoEsperado);
   });
 }
